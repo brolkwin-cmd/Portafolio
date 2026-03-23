@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,28 +6,117 @@
 }
 
 html {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 62.5%;
-}
-header{
-    position:fixed;
-    z-index: 100;
-width: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     background-color: #3282C2;
-    min-height: 100vh;
+    color: #1a1a1a;
 }
 
-.menu{
-    background-color: #F4E1C1;
+header {
+    position: fixed;
+    z-index: 100;
     width: 100%;
-    height: 90px;
 }
 
-.logomenu{
-    width: 200px;
+.menu {
+    background-color: #F4E1C1;
+    height: 85px;
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #1a1a1a solid 4px;
+}
+
+.logomenu .img {
+    height: 80px;
+}
+.logomenu:hover{
+    transform: scale(1.);
+    transition: 2s;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.list_item a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 900;
+    font-size: 1.8rem;
+    transition: 0.2s;
+}
+
+.list_item a:hover {
+    color: #D63426;
+}
+
+
+.hero {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px;
+    width: 100%;
+}
+
+
+
+.Titulo {
+    font-size: 5rem;
+    text-align: center;
+    color: #F4E1C1;
+    text-shadow: 3px 3px 0px #1a1a1a2d;
+}
+
+.Subtitulo {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #FDBE35;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.ImagenHero {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px;
+    border: 5px solid #1a1a1a;
+    margin-bottom: 30px;
+    opacity: 85%;
+}
+
+.ImagenHero:hover{
+    opacity: 110%;
+    transform: scale(1.01);
+    transition: 2s;
+    box-shadow: #3282C2 0px 0px 5px;
+}
+
+.BotoneraHero {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Boton{
+    background-color: #F4E1C1;
+    color: #1a1a1a;
+    padding: 12px;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    border: #1a1a1a 5px solid;
+}
+
+.Boton:hover{
+    transform: scale(1.03);
+        border: 5px solid #D63426;
+        color: #D63426;
 }
