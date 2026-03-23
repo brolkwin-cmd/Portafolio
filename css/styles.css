@@ -3,3 +3,63 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-size: 62.5%;
+}
+
+header{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.icon{
+    width: 3rem;
+}
+
+.menu__list{
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.menu__link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+@media (max-width: 768px){
+
+    header{
+        padding: 2rem 1.5rem;
+    }
+
+    .icon{
+        width: 2.5rem;
+    }
+
+    .menu__list{
+        gap: 1rem;
+    }
+
+    .menu__link{
+        font-size: 1.6rem;
+    }
+}
+
+
+@media (max-width: 530px){
+
+    .social__icon{
+        display: none;
+    }
+
+
+}
