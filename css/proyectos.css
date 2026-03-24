@@ -1,0 +1,54 @@
+.MainProyectos {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3282C2;
+    padding-top: 120px; 
+}
+
+.Structure {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 10%;
+    width: 100%;
+}
+
+.Structure div {
+    background-color: #F4E1C1; 
+    border: 5px solid #1a1a1a;
+    border-radius: 20px;
+    padding: 30px;
+    width: 320px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.Structure h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.Structure p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.Structure span {
+    font-weight: 900;
+    color: #D63426;
+}
+
+.Structure div:hover {
+    transform: rotate(5deg);
+    background-color: #FDBE35;
+    border-color: #D63426;
+    box-shadow: 0px 0px 10px #D63426;
+}

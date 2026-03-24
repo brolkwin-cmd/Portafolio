@@ -16,10 +16,12 @@
     <header>
         <nav class="menu">
             <div class="logomenu">
-                <img src="./../img/logo.svg" alt="" class="img">
+                <a href="/html/index.html">
+                    <img src="./../img/logo.svg" alt="Imagen Logo" class="img">
+                </a>
             </div>
             <ul class="list">
-                <li class="list_item"> <a href="index.html"> Proyectos</a></li>
+                <li class="list_item"> <a href="/html/proyectos.html"> Proyectos</a></li>
                 <li class="list_item"> <a href="me.html">Sobre Mi</a></li>
                 <li class="list_item"> <a href="contact.html">Contacto</a></li>
             </ul>
@@ -35,17 +37,17 @@
         <form action="#" method="POST" class="FormularioContacto">
             <div class="GrupoForm">
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
             </div>
 
             <div class="GrupoForm">                <label for="email">Email</label>
 
-                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com">
             </div>
 
             <div class="GrupoForm">
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..."></textarea>
             </div>
 
             <button type="submit" class="Boton">Enviar Mensaje</button>
