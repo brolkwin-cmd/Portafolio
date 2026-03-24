@@ -74,6 +74,7 @@ header {
     text-align: center;
     color: #F4E1C1;
     text-shadow: 3px 3px 0px #1a1a1a2d;
+        text-transform: uppercase;
 }
 
 .Subtitulo {
@@ -82,6 +83,7 @@ header {
     color: #FDBE35;
     font-weight: bolder;
     margin-bottom: 20px;
+    
 }
 
 .ImagenHero {

@@ -1,0 +1,42 @@
+.ContenedorContacto {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.FormularioContacto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.GrupoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.GrupoForm label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #FDBE35;
+}
+
+.GrupoForm input, 
+.GrupoForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 4px solid #1a1a1a;
+    border-radius: 10px;
+    background-color: #F4E1C1;
+    font-family: inherit;
+    font-size: 1.4rem;
+    outline: none;
+}           
+
+
+.FormularioContacto{
+    align-self: center;
+    cursor: pointer;
+}
