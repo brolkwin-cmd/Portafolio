@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +33,8 @@ header {
 .logomenu .img {
     height: 80px;
 }
-.logomenu:hover{
+
+.logomenu:hover {
     transform: scale(1.);
     transition: 2s;
 }
@@ -59,11 +59,12 @@ header {
 
 
 .hero {
-display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 110px;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 
@@ -92,7 +93,7 @@ display: flex;
     opacity: 85%;
 }
 
-.ImagenHero:hover{
+.ImagenHero:hover {
     opacity: 110%;
     transform: scale(1.01);
     transition: 2s;
@@ -105,7 +106,7 @@ display: flex;
     gap: 20px;
 }
 
-.Boton{
+.Boton {
     background-color: #F4E1C1;
     color: #1a1a1a;
     padding: 12px;
@@ -113,10 +114,162 @@ display: flex;
     font-size: 1.8rem;
     font-weight: 900;
     border: #1a1a1a 5px solid;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
-.Boton:hover{
+.Boton:hover {
     transform: scale(1.03);
-        border: 5px solid #D63426;
-        color: #D63426;
+    border: 5px solid #D63426;
+    color: #D63426;
+}
+
+.SobreMi {
+    background-color: #F4E1C1;
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 4px solid #1a1a1a;
+}
+
+.SobreMi img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #1a1a1a;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.SobreMi img:hover {
+    border: 6px solid #D63426;
+    transition: 2s;
+    opacity: 90%;
+
+}
+
+.ParrafoIndex {
+    font-size: 1.6rem;
+    justify-content: space-around;
+    max-width: 800px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+
+.TextoXp {
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    color: #F4E1C1;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.ContenedorCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 10%;
+}
+
+.HabilidadCard {
+    background-color: #FDBE35;
+    border: 5px solid #1a1a1a;
+    border-radius: 50%;
+    padding: 20px;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HabilidadCard span {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #1a1a1a;
+
+}
+
+.HabilidadCard:hover {
+    transform: rotate(5deg);
+    background-color: #F4E1C1;
+    box-shadow: 0px 0px 5px #D63426;
+    border-color: #D63426;
+    color: #D63426;
+}
+
+.HabilidadCard:hover i {
+    color: #D63426;
+    transform: scale(1.1);
+}
+
+.Experiencia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.Experiencia:hover {
+    color: #FDBE35;
+}
+
+.contacto {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+
+.contacto .Subtitulo {
+    color: #FDBE35;
+}
+
+footer {
+    background-color: #F4E1C1;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.4rem;
+    border-top: 4px solid #1a1a1a;
+}
+
+.social a {
+    margin: 0px 10px;
+    color: #D63426;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .Titulo {
+        font-size: 3.5rem;
+    }
+
+    .Subtitulo {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    .Habilidades {
+        padding: 20px 5% 50px;
+        gap: 15px;
+    }
+
+    .Habilidades div {
+        width: 40%;
+        font-size: 1.4rem;
+        padding: 15px;
+    }
 }
