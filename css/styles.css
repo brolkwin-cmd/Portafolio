@@ -57,6 +57,24 @@ header {
     color: #D63426;
 }
 
+.heroCV{
+width: 100%;
+}
+
+.imgCv{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    justify-items: center;
+    text-align: center;
+    width: 60%;
+    border-radius: 20px;
+    border: #1a1a1a 5px solid;
+}
 
 .hero {
     display: flex;
@@ -66,8 +84,6 @@ header {
     width: 100%;
     margin-bottom: 50px;
 }
-
-
 
 .Titulo {
     font-size: 5rem;
