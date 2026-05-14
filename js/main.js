@@ -1,18 +1,3 @@
-// ══════════════════════════════════════════════
-//  EMAILJS CONFIG  —  Completa estos 3 valores:
-//  1. Crea cuenta gratis en https://emailjs.com
-//  2. Add Email Service (Gmail) → copia el Service ID
-//  3. Create Email Template → copia el Template ID
-//  4. Account → API Keys → copia la Public Key
-//
-//  Variables del template EmailJS:
-//    {{from_name}}  →  campo "nombre" del form
-//    {{from_email}} →  campo "email" del form
-//    {{message}}    →  campo "mensaje" del form
-// ══════════════════════════════════════════════
-const EJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-const EJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
 
 // ── Mobile hamburger menu ──────────────────────
 const menuToggle = document.querySelector('.menu-toggle');
@@ -106,17 +91,12 @@ filterBtns.forEach(btn => {
     });
 });
 
-// ── Contact form (EmailJS) ─────────────────────
+// ── Contact form (Formspree) ───────────────────
 const contactForm  = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
 if (contactForm && formFeedback) {
-    // Init EmailJS if SDK is loaded and key is set
-    if (typeof emailjs !== 'undefined' && EJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-        emailjs.init({ publicKey: EJS_PUBLIC_KEY });
-    }
-
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         if (!contactForm.checkValidity()) {
@@ -127,38 +107,30 @@ if (contactForm && formFeedback) {
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const origText  = submitBtn.textContent;
-
-        // EmailJS not configured → mailto fallback
-        if (typeof emailjs === 'undefined' || EJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
-            const nombre  = document.getElementById('nombre')?.value || '';
-            const email   = document.getElementById('email')?.value || '';
-            const mensaje = document.getElementById('mensaje')?.value || '';
-            const body    = encodeURIComponent(`Nombre: ${nombre}\n\n${mensaje}`);
-            const subject = encodeURIComponent(`Contacto desde portafolio — ${nombre}`);
-            window.location.href = `mailto:brolkwin@gmail.com?subject=${subject}&body=${body}&cc=${encodeURIComponent(email)}`;
-            formFeedback.textContent = 'Se abrió tu cliente de correo. ¡Gracias por escribirme!';
-            formFeedback.className = 'FormFeedback success';
-            contactForm.reset();
-            return;
-        }
-
         submitBtn.textContent = 'Enviando…';
         submitBtn.disabled = true;
 
-        emailjs.sendForm(EJS_SERVICE_ID, EJS_TEMPLATE_ID, contactForm)
-            .then(() => {
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
                 formFeedback.textContent = '¡Mensaje enviado con éxito! Te contactaré pronto.';
                 formFeedback.className = 'FormFeedback success';
                 contactForm.reset();
-            })
-            .catch(() => {
-                formFeedback.innerHTML = 'Hubo un error al enviar. Escríbeme directamente a '
-                    + '<a href="mailto:brolkwin@gmail.com">brolkwin@gmail.com</a>';
-                formFeedback.className = 'FormFeedback error';
-            })
-            .finally(() => {
-                submitBtn.textContent = origText;
-                submitBtn.disabled = false;
-            });
+            } else {
+                throw new Error();
+            }
+        } catch {
+            formFeedback.innerHTML = 'Hubo un error al enviar. Escríbeme a '
+                + '<a href="mailto:brolkwin@gmail.com">brolkwin@gmail.com</a>';
+            formFeedback.className = 'FormFeedback error';
+        } finally {
+            submitBtn.textContent = origText;
+            submitBtn.disabled = false;
+        }
     });
 }
