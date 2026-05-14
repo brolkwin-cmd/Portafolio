@@ -201,7 +201,11 @@
     height: 100%;
     background-color: var(--accent-red);
     border-radius: 50px;
-    transition: width 1.2s ease 0.4s;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+.CVLangFill.animated {
+    /* width set by JS from data-width attribute */
 }
 .CVLangPercent {
     font-size: 1.4rem;
@@ -222,12 +226,32 @@
     flex-wrap: wrap;
 }
 
-/* ── Responsive ── */
+/* ── Responsive: Tablet ── */
+@media (max-width: 900px) {
+    .CVContainer { padding: 36px 28px; }
+}
+
+/* ── Responsive: Mobile ── */
 @media (max-width: 768px) {
-    .CVContainer { padding: 25px 18px; }
+    .Acerca { padding-top: 105px; padding-bottom: 60px; }
+    .CVContainer { padding: 24px 16px; }
     .CVName { font-size: 2.8rem; }
-    .CVRole { font-size: 1.6rem; }
+    .CVRole { font-size: 1.5rem; }
     .CVContact { flex-direction: column; align-items: center; gap: 6px; }
+    .CVSectionTitle { font-size: 1.9rem; }
+    .CVText { font-size: 1.55rem; }
+    .CVList li { font-size: 1.5rem; }
+    .CVJob { padding: 18px 16px; }
+    .CVJobTitle { font-size: 1.7rem; }
     .CVCta { flex-direction: column; align-items: center; }
     .CVCta .Boton { width: 100%; text-align: center; max-width: 300px; }
+    .CVLangLabel { width: 70px; font-size: 1.3rem; }
+    .CVLangPercent { font-size: 1.3rem; }
+}
+
+/* ── Responsive: Small phones ── */
+@media (max-width: 420px) {
+    .CVContainer { padding: 20px 12px; }
+    .CVName { font-size: 2.4rem; }
+    .CVSkillTag { font-size: 1.2rem; padding: 5px 12px; }
 }

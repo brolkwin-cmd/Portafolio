@@ -368,7 +368,26 @@ footer {
     box-shadow: 5px 5px 0px var(--text-dark);
 }
 
-/* ── Responsive ── */
+/* ── Responsive: Tablet ── */
+@media (max-width: 1024px) {
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        text-align: left;
+        align-items: center;
+        column-gap: 40px;
+        padding: 140px 5% 80px;
+    }
+    .HeroTag   { grid-column: 1; grid-row: 1; }
+    .hero .Titulo   { grid-column: 1; grid-row: 2; font-size: 4.8rem; }
+    .hero .Subtitulo { grid-column: 1; grid-row: 3; }
+    .hero .ParrafoIndex { grid-column: 1; grid-row: 4; margin: 0 0 0 0; }
+    .BotoneraHero { grid-column: 1; grid-row: 5; justify-content: flex-start; }
+    .ImagenHero { grid-column: 2; grid-row: 1 / 6; width: 100%; max-width: none; align-self: center; }
+}
+
+/* ── Responsive: Mobile ── */
 @media (max-width: 768px) {
     header { height: 75px; }
 
@@ -389,20 +408,45 @@ footer {
         box-shadow: 0 6px 0 var(--text-dark);
     }
     .list.open { display: flex; }
-    .list_item a { font-size: 1.8rem; display: block; padding: 10px 14px; }
+    .list_item a { font-size: 1.8rem; display: block; padding: 12px 14px; }
 
-    .Titulo { font-size: 3.8rem; }
-    .Subtitulo { font-size: 2rem; }
-    .TextoXp { font-size: 3.2rem; }
+    /* Reset hero to single column on mobile */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 105px;
+        align-items: center;
+    }
+    .ImagenHero { max-width: 100%; }
+    .BotoneraHero { justify-content: center; }
 
-    .hero { padding-top: 120px; }
-    .SobreMiPreview img { width: 150px; height: 150px; }
+    .Titulo { font-size: 3.6rem; }
+    .Subtitulo { font-size: 1.9rem; }
+    .TextoXp { font-size: 3rem; }
+
+    .SobreMiPreview img { width: 140px; height: 140px; }
 
     .BotoneraHero { flex-direction: column; align-items: center; }
-    .BotoneraHero .Boton { width: 100%; text-align: center; max-width: 320px; }
+    .BotoneraHero .Boton { width: 100%; text-align: center; max-width: 300px; }
 
-    footer { flex-direction: column; text-align: center; }
+    .HabilidadCard { padding: 18px 20px; }
+    .HabilidadCard span { font-size: 1.6rem; }
+
+    footer { flex-direction: column; text-align: center; gap: 16px; }
     .social { justify-content: center; }
+}
+
+/* ── Responsive: Small phones (≤ 420px) ── */
+@media (max-width: 420px) {
+    .Titulo { font-size: 3rem; }
+    .Subtitulo { font-size: 1.7rem; }
+    .TextoXp { font-size: 2.6rem; }
+    .HeroTag { font-size: 1.2rem; padding: 5px 14px; }
+    .ParrafoIndex { font-size: 1.6rem; }
+
+    .Boton { font-size: 1.5rem; padding: 12px 22px; }
+    .social a { font-size: 1.3rem; padding: 7px 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

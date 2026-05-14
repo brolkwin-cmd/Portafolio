@@ -119,6 +119,22 @@
     box-shadow: 3px 3px 0px var(--accent-red);
 }
 
+/* ── Disponibilidad badge ── */
+.DisponibilidadTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: var(--accent-yellow);
+    border: 3px solid var(--text-dark);
+    border-radius: 50px;
+    padding: 7px 16px;
+    box-shadow: 3px 3px 0px var(--text-dark);
+    margin-top: 6px;
+}
+
 /* ── Form feedback ── */
 .FormFeedback {
     font-size: 1.5rem;
@@ -130,9 +146,24 @@
 .FormFeedback.success { color: #15803d; }
 .FormFeedback.error { color: var(--accent-red); }
 
-/* ── Responsive ── */
+/* ── Responsive: Tablet ── */
+@media (max-width: 900px) {
+    .ContactoGrid { grid-template-columns: 1fr 1.5fr; gap: 20px; }
+}
+
+/* ── Responsive: Mobile ── */
 @media (max-width: 768px) {
-    .ContactoGrid { grid-template-columns: 1fr; }
+    .contacto { padding-top: 105px; padding-bottom: 60px; }
+    .ContactoGrid { grid-template-columns: 1fr; gap: 20px; }
     .FormularioContacto { padding: 24px 18px; }
-    .ContactoInfo { padding: 24px 18px; }
+    .ContactoInfo { padding: 22px 18px; }
+    .InfoItem a, .InfoItem span { font-size: 1.4rem; word-break: break-word; }
+}
+
+/* ── Responsive: Small phones ── */
+@media (max-width: 420px) {
+    .FormularioContacto { padding: 20px 14px; }
+    .GrupoForm label { font-size: 1.4rem; }
+    .GrupoForm input, .GrupoForm textarea { font-size: 1.5rem; padding: 11px 13px; }
+    .DisponibilidadTag { font-size: 1.2rem; padding: 6px 12px; }
 }

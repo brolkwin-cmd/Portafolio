@@ -32,7 +32,8 @@
     color: var(--text-dark);
     border: 3px solid var(--text-dark);
     border-radius: 50px;
-    padding: 9px 22px;
+    padding: 11px 22px;
+    min-height: 44px;
     font-family: var(--font-main);
     font-size: 1.5rem;
     font-weight: 900;
@@ -97,8 +98,9 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .ProjectCard h2 {
@@ -196,13 +198,22 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-    .Structure { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .Structure { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
 }
 
 @media (max-width: 600px) {
-    .Structure { grid-template-columns: 1fr; }
+    .MainProyectos { padding-top: 100px; }
+    .Structure { grid-template-columns: 1fr; gap: 20px; }
     .ButtonGroup { flex-direction: column; }
     .ButtonGroup .Boton { flex: unset; }
-    .FiltroBotones { gap: 8px; }
-    .FiltroBtn { font-size: 1.3rem; padding: 7px 16px; }
+    .FiltroBotones { gap: 8px; margin-bottom: 28px; }
+    .FiltroBtn { font-size: 1.3rem; padding: 9px 16px; }
+    .FiltroIcon { display: none; }
+    .ProjectCard { padding: 24px 20px; }
+    .ProjectCard h2 { font-size: 1.9rem; }
+}
+
+@media (max-width: 420px) {
+    .Structure { padding: 0 4%; }
+    .FiltroBtn { font-size: 1.2rem; padding: 8px 12px; }
 }

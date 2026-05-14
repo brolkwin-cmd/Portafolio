@@ -18,19 +18,32 @@ const EJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
 const menuToggle = document.querySelector('.menu-toggle');
 const navList    = document.querySelector('.list');
 
+function closeNav() {
+    navList?.classList.remove('open');
+    menuToggle?.classList.remove('active');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+}
+
 if (menuToggle && navList) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', e => {
+        e.stopPropagation();
         const isOpen = navList.classList.toggle('open');
         menuToggle.classList.toggle('active');
         menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
     document.querySelectorAll('.list_item a').forEach(link => {
-        link.addEventListener('click', () => {
-            navList.classList.remove('open');
-            menuToggle.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeNav);
+    });
+
+    // Close when clicking outside the nav
+    document.addEventListener('click', e => {
+        if (!e.target.closest('header')) closeNav();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeNav();
     });
 }
 
@@ -46,6 +59,23 @@ const revealObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll('.fade-in').forEach(el => revealObserver.observe(el));
+
+// ── Language bar animation ─────────────────────
+const langObserver = new IntersectionObserver(
+    entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const fill = entry.target;
+            const target = fill.dataset.width || '0';
+            requestAnimationFrame(() => {
+                fill.style.width = target + '%';
+            });
+            langObserver.unobserve(fill);
+        }
+    }),
+    { threshold: 0.5 }
+);
+
+document.querySelectorAll('.CVLangFill').forEach(el => langObserver.observe(el));
 
 // ── Project filter ─────────────────────────────
 const filterBtns  = document.querySelectorAll('.FiltroBtn');
