@@ -129,3 +129,5 @@ Thumbs.db
 
 # Temporary files created by the agent
 cv_text.txt
+
+.vercel
