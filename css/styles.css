@@ -9,9 +9,11 @@
     --shadow-hard: 6px 6px 0px var(--text-dark);
     --shadow-hover: 10px 10px 0px var(--text-dark);
     --radius: 12px;
+    --transition: 0.2s ease;
+    --transition-bounce: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,18 +29,20 @@ body {
     background-color: var(--bg-blue);
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Typography */
 h1, h2, h3, h4 { font-weight: 900; letter-spacing: -0.5px; }
 p { font-size: 1.6rem; font-weight: 500; }
+img { display: block; max-width: 100%; }
 
-/* Header & Nav */
+/* ── Header & Nav ── */
 header {
     background-color: var(--bg-cream);
     height: 85px;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom: var(--border-thick);
     position: fixed;
     width: 100%;
@@ -53,13 +57,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
+    position: relative;
 }
 
 .logomenu .img {
-    height: 60px;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 55px;
+    transition: transform var(--transition-bounce);
 }
-
 .logomenu:hover .img {
     transform: scale(1.1) rotate(-5deg);
 }
@@ -67,27 +71,57 @@ header {
 .list {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 10px;
 }
 
 .list_item a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 800;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
-    transition: all 0.2s;
-    padding: 5px 10px;
+    transition: all var(--transition);
+    padding: 6px 14px;
     border-radius: 8px;
+    border: 3px solid transparent;
 }
 
-.list_item a:hover {
+.list_item a:hover,
+.list_item a.active {
     color: var(--bg-cream);
     background-color: var(--accent-red);
+    border-color: var(--text-dark);
     box-shadow: 3px 3px 0px var(--text-dark);
 }
 
-/* Reusable Components */
+/* ── Hamburger ── */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: 3px solid var(--text-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: background-color var(--transition);
+}
+.menu-toggle:hover { background-color: var(--accent-yellow); }
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5.5px, 5.5px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5.5px, -5.5px); }
+
+/* ── Reusable ── */
 .Titulo {
     font-size: 5.5rem;
     color: var(--bg-cream);
@@ -111,17 +145,16 @@ header {
     color: var(--text-dark);
     padding: 14px 28px;
     border-radius: var(--radius);
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 900;
     text-decoration: none;
     text-transform: uppercase;
     border: var(--border-thick);
     box-shadow: var(--shadow-hard);
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin: 10px;
+    transition: all var(--transition-bounce);
+    letter-spacing: 0.5px;
 }
-
 .Boton:hover {
     transform: translate(-4px, -4px);
     box-shadow: var(--shadow-hover);
@@ -132,88 +165,132 @@ header {
     background-color: var(--accent-red);
     color: var(--bg-cream);
 }
-
 .Boton.outline:hover {
-    background-color: #e53e30;
+    background-color: #c42a1e;
     color: var(--bg-cream);
 }
 
-/* Sections */
-section {
-    padding: 100px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* ── Scroll animations ── */
+.fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in.delay-1 { transition-delay: 0.1s; }
+.fade-in.delay-2 { transition-delay: 0.2s; }
+.fade-in.delay-3 { transition-delay: 0.3s; }
+.fade-in.delay-4 { transition-delay: 0.4s; }
+.fade-in.delay-5 { transition-delay: 0.5s; }
+.fade-in.delay-6 { transition-delay: 0.6s; }
 
-/* Hero Section */
+/* ── Hero ── */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 140px;
-    padding-bottom: 60px;
+    padding: 140px 5% 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.HeroTag {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border: 3px solid var(--text-dark);
+    border-radius: 50px;
+    box-shadow: 3px 3px 0px var(--text-dark);
+    margin-bottom: 18px;
+    letter-spacing: 1px;
 }
 
 .ImagenHero {
     width: 100%;
-    max-width: 700px;
+    max-width: 680px;
     border-radius: var(--radius);
     border: var(--border-thick);
     box-shadow: var(--shadow-hard);
     margin-bottom: 40px;
-    transition: transform 0.3s;
+    transition: transform var(--transition-bounce), box-shadow var(--transition);
     background-color: var(--bg-cream);
+    object-fit: cover;
 }
-
 .ImagenHero:hover {
     transform: rotate(-1deg) scale(1.02);
+    box-shadow: var(--shadow-hover);
 }
 
-/* Sobre Mi (Home preview) */
+.ParrafoIndex {
+    font-size: 1.8rem;
+    max-width: 760px;
+    margin: 0 auto 30px;
+    color: var(--bg-cream);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.BotoneraHero {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+.BotoneraHero .Boton { margin: 0; }
+
+/* ── Sobre Mí Preview ── */
 .SobreMiPreview {
     background-color: var(--bg-cream);
     border-top: var(--border-thick);
     border-bottom: var(--border-thick);
     padding: 80px 5%;
     text-align: center;
-    max-width: 100%;
 }
 
 .SobreMiPreview img {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: var(--border-thick);
     box-shadow: var(--shadow-hard);
     object-fit: cover;
-    margin-bottom: 30px;
-    transition: transform 0.3s;
+    margin: 0 auto 30px;
+    transition: transform var(--transition-bounce);
 }
-
 .SobreMiPreview img:hover {
     transform: rotate(5deg) scale(1.05);
-}
-
-.ParrafoIndex {
-    font-size: 1.8rem;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    color: var(--text-dark);
 }
 
 .SobreMiPreview .Subtitulo {
     text-shadow: none;
     color: var(--accent-red);
 }
+.SobreMiPreview .ParrafoIndex {
+    color: var(--text-dark);
+    text-shadow: none;
+    font-weight: 500;
+}
 
-/* Habilidades */
+/* ── Habilidades ── */
 .SeccionHabilidades {
     text-align: center;
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .TextoXp {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 900;
     color: var(--bg-cream);
     text-shadow: 3px 3px 0px var(--text-dark);
@@ -225,7 +302,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .HabilidadCard {
@@ -233,55 +310,102 @@ section {
     border: var(--border-thick);
     border-radius: var(--radius);
     box-shadow: var(--shadow-hard);
-    padding: 25px 30px;
+    padding: 22px 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s;
+    transition: all var(--transition-bounce);
+    cursor: default;
 }
-
 .HabilidadCard span {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 900;
     text-transform: uppercase;
 }
-
 .HabilidadCard:hover {
-    transform: translate(-4px, -4px) rotate(-3deg);
+    transform: translate(-4px, -4px) rotate(-2deg);
     box-shadow: var(--shadow-hover);
     background-color: var(--bg-cream);
-    color: var(--accent-red);
 }
 
-/* Footer */
+/* ── Footer ── */
 footer {
     background-color: var(--bg-cream);
     border-top: var(--border-thick);
-    padding: 40px 5%;
+    padding: 35px 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 800;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+.social {
+    display: flex;
+    gap: 12px;
+}
 .social a {
-    margin: 0 15px;
-    color: var(--accent-red);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s;
-}
-
-.social a:hover {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: var(--text-dark);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 3px solid var(--text-dark);
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px var(--text-dark);
+    transition: all var(--transition);
+}
+.social a:hover {
+    background-color: var(--accent-red);
+    color: var(--bg-cream);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--text-dark);
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 768px) {
-    .menu { flex-direction: column; gap: 10px; padding: 10px; }
-    header { height: auto; padding-bottom: 15px; }
-    .Titulo { font-size: 4rem; }
-    .hero { padding-top: 180px; }
+    header { height: 75px; }
+
+    .menu-toggle { display: flex; }
+
+    .list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        right: 0;
+        background-color: var(--bg-cream);
+        border-bottom: var(--border-thick);
+        padding: 15px 5%;
+        gap: 8px;
+        z-index: 999;
+        box-shadow: 0 6px 0 var(--text-dark);
+    }
+    .list.open { display: flex; }
+    .list_item a { font-size: 1.8rem; display: block; padding: 10px 14px; }
+
+    .Titulo { font-size: 3.8rem; }
+    .Subtitulo { font-size: 2rem; }
+    .TextoXp { font-size: 3.2rem; }
+
+    .hero { padding-top: 120px; }
     .SobreMiPreview img { width: 150px; height: 150px; }
+
+    .BotoneraHero { flex-direction: column; align-items: center; }
+    .BotoneraHero .Boton { width: 100%; text-align: center; max-width: 320px; }
+
+    footer { flex-direction: column; text-align: center; }
+    .social { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in { opacity: 1; transform: none; transition: none; }
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }

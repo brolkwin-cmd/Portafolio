@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Daniel Mateo Alzate López — Diseñador Instruccional, Desarrollador Web Full Stack e Ingeniero Multimedia en Bogotá, Colombia.">
     <title>Mateo Alzate | Portafolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -12,9 +13,12 @@
         <nav class="menu">
             <div class="logomenu">
                 <a href="/html/index.html">
-                    <img src="/img/logo.svg" alt="Imagen Logo" class="img">
+                    <img src="/img/logo.svg" alt="Logo Mateo Alzate" class="img">
                 </a>
             </div>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="list">
                 <li class="list_item"><a href="/html/proyectos.html">Proyectos</a></li>
                 <li class="list_item"><a href="/html/sobremi.html">Sobre Mí</a></li>
@@ -25,37 +29,37 @@
 
     <main>
         <section class="hero">
-            <h1 class="Titulo">Mateo Alzate</h1>
-            <p class="Subtitulo">Diseñador Web Junior & Ingeniero Multimedia</p>
-            <img class="ImagenHero" src="/img/Hero.png" alt="Desarrollo Web">
-            <p class="ParrafoIndex" style="color: var(--bg-cream); text-shadow: 1px 1px 0px var(--text-dark); font-weight: 800;">
-                Construyo soluciones digitales a la medida. Experto en transformar requerimientos en experiencias interactivas escalables, usando código moderno, WordPress y plataformas LMS.
+            <span class="HeroTag fade-in">Disponible para nuevos proyectos</span>
+            <h1 class="Titulo fade-in delay-1">Mateo Alzate</h1>
+            <p class="Subtitulo fade-in delay-2">Diseñador Web & Ingeniero Multimedia</p>
+            <img class="ImagenHero fade-in delay-2" src="/img/Hero.png" alt="Desarrollo Web" loading="lazy">
+            <p class="ParrafoIndex fade-in delay-3">
+                Transformo ideas en experiencias digitales impactantes, combinando tecnología, creatividad y pedagogía. Experto en desarrollo web a medida, WordPress y plataformas LMS.
             </p>
-            
-            <div class="BotoneraHero">
+            <div class="BotoneraHero fade-in delay-4">
                 <a href="/html/proyectos.html" class="Boton">Conoce mis proyectos</a>
                 <a href="/html/contact.html" class="Boton outline">Hablemos</a>
             </div>
         </section>
 
         <section class="SobreMiPreview">
-            <img src="/img/Mateo.jpeg" alt="Foto mateo">
-            <h2 class="Subtitulo">Diseñador Instruccional - Desarrollo Web</h2>
-            <p class="ParrafoIndex">
-                Soy un profesional apasionado por la convergencia entre la comunicación visual y la tecnología educativa. Lidero estrategias de diseño gráfico y audiovisual, administrando plataformas LMS (Moodle), integrando Inteligencia Artificial y desarrollando web Full Stack.
+            <img src="/img/Mateo.jpeg" alt="Daniel Mateo Alzate" loading="lazy" class="fade-in">
+            <h2 class="Subtitulo fade-in delay-1">Diseñador Instruccional · Desarrollo Web</h2>
+            <p class="ParrafoIndex fade-in delay-2">
+                Soy un profesional apasionado por la convergencia entre la comunicación visual y la tecnología educativa. Lidero estrategias de diseño gráfico y audiovisual, administro plataformas LMS (Moodle), integro Inteligencia Artificial y desarrollo web Full Stack.
             </p>
-            <a href="/html/sobremi.html" class="Boton">Ver mi CV completo</a>
+            <a href="/html/sobremi.html" class="Boton fade-in delay-3">Ver mi perfil completo</a>
         </section>
 
         <section class="SeccionHabilidades">
-            <h2 class="TextoXp">Habilidades</h2>
+            <h2 class="TextoXp fade-in">Habilidades</h2>
             <div class="ContenedorCards">
-                <div class="HabilidadCard"><span>HTML5 / CSS3 / JS</span></div>
-                <div class="HabilidadCard"><span>WordPress</span></div>
-                <div class="HabilidadCard"><span>Moodle LMS</span></div>
-                <div class="HabilidadCard"><span>Diseño UX/UI</span></div>
-                <div class="HabilidadCard"><span>IA & E-Learning</span></div>
-                <div class="HabilidadCard"><span>Adobe Suite</span></div>
+                <div class="HabilidadCard fade-in delay-1"><span>HTML5 / CSS3 / JS</span></div>
+                <div class="HabilidadCard fade-in delay-2"><span>WordPress</span></div>
+                <div class="HabilidadCard fade-in delay-3"><span>Moodle LMS</span></div>
+                <div class="HabilidadCard fade-in delay-4"><span>Diseño UX/UI</span></div>
+                <div class="HabilidadCard fade-in delay-5"><span>IA & E-Learning</span></div>
+                <div class="HabilidadCard fade-in delay-6"><span>Adobe Suite</span></div>
             </div>
         </section>
     </main>
@@ -63,9 +67,11 @@
     <footer>
         <p>© 2026 Mateo Alzate. Todos los derechos reservados.</p>
         <div class="social">
-            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/brolkwin-cmd" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/brolkwin-cmd" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
     </footer>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de proyectos de Mateo Alzate — Desarrollo web a medida, WordPress, Moodle LMS y gamificación corporativa.">
     <title>Proyectos | Mateo Alzate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/proyectos.css">
 </head>
@@ -13,11 +14,14 @@
         <nav class="menu">
             <div class="logomenu">
                 <a href="/html/index.html">
-                    <img src="/img/logo.svg" alt="Imagen Logo" class="img">
+                    <img src="/img/logo.svg" alt="Logo Mateo Alzate" class="img">
                 </a>
             </div>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="list">
-                <li class="list_item"><a href="/html/proyectos.html" style="color: var(--accent-red);">Proyectos</a></li>
+                <li class="list_item"><a href="/html/proyectos.html" class="active">Proyectos</a></li>
                 <li class="list_item"><a href="/html/sobremi.html">Sobre Mí</a></li>
                 <li class="list_item"><a href="/html/contact.html">Contacto</a></li>
             </ul>
@@ -25,51 +29,227 @@
     </header>
 
     <main class="MainProyectos">
-        <h1 class="Titulo">PORTAFOLIO</h1>
-        <p class="Subtitulo">Proyectos destacados de Desarrollo Web</p>
+        <h1 class="Titulo fade-in">PORTAFOLIO</h1>
+        <p class="Subtitulo fade-in delay-1">Proyectos reales · Clientes reales</p>
 
-        <section class="Structure">
-            
-            <div class="ProjectCard">
-                <h2>BPMe Technologies</h2>
-                <span class="Badge code">Desarrollo a Medida</span>
-                <p>Plataforma operativa para programas corporativos. Interfaces limpias, construidas mediante desarrollo web a la medida.</p>
+        <!-- Filtros -->
+        <div class="FiltroBotones fade-in delay-2" role="tablist" aria-label="Filtrar proyectos por categoría">
+            <button class="FiltroBtn active" data-filter="todos" role="tab" aria-selected="true">Todos</button>
+            <button class="FiltroBtn" data-filter="codigo" role="tab" aria-selected="false">
+                <span class="FiltroIcon">⚡</span> Código
+            </button>
+            <button class="FiltroBtn" data-filter="wordpress" role="tab" aria-selected="false">
+                <span class="FiltroIcon">🌐</span> WordPress
+            </button>
+            <button class="FiltroBtn" data-filter="elearning" role="tab" aria-selected="false">
+                <span class="FiltroIcon">🎓</span> E-Learning
+            </button>
+            <button class="FiltroBtn" data-filter="gamificacion" role="tab" aria-selected="false">
+                <span class="FiltroIcon">🎮</span> Gamificación
+            </button>
+        </div>
+
+        <section class="Structure" id="gridProyectos">
+
+            <!-- ── CÓDIGO ────────────────────────────────── -->
+
+            <div class="ProjectCard fade-in delay-1" data-cat="codigo">
+                <div class="CardTop">
+                    <h2>BPMe Technologies</h2>
+                    <span class="Badge code">Código</span>
+                </div>
+                <p>Plataforma corporativa para el mercado de EE.UU. Gestión de programas federales y BPO desde centros nearshore en Bogotá. Procesa 6.000–8.000 transacciones diarias.</p>
+                <div class="CardTags">
+                    <span class="CardTag">HTML/CSS/JS</span>
+                    <span class="CardTag">Responsive</span>
+                    <span class="CardTag">BPO</span>
+                </div>
                 <div class="ButtonGroup">
-                    <a href="https://bpme.bpmconsulting.com.co/" target="_blank" class="Boton">Ver Principal</a>
-                    <a href="https://bpmetechnologies.com/" target="_blank" class="Boton outline">Ver Previa</a>
+                    <a href="https://bpme.bpmconsulting.com.co/" target="_blank" rel="noopener" class="Boton">Ver Sitio</a>
+                    <a href="https://lightgrey-chinchilla-194809.hostingersite.com/index.html" target="_blank" rel="noopener" class="Boton outline">Ver Previa</a>
                 </div>
             </div>
 
-            <div class="ProjectCard">
-                <h2>HAUV Trading</h2>
-                <span class="Badge wp">WordPress (CMS)</span>
-                <p>Plataforma global para la gestión segura de activos digitales respaldados por oro. Diseño corporativo y optimizado.</p>
-                <a href="https://hauvtrading.com/" target="_blank" class="Boton">Visitar Sitio</a>
+            <div class="ProjectCard fade-in delay-2" data-cat="codigo">
+                <div class="CardTop">
+                    <h2>Serenity App</h2>
+                    <span class="Badge code">Código</span>
+                </div>
+                <p>App web de bienestar emocional corporativo. Basada en la Rueda de Emociones de Plutchik — conecta a empleados con recursos de salud mental de forma anónima y segura.</p>
+                <div class="CardTags">
+                    <span class="CardTag">React</span>
+                    <span class="CardTag">Vercel</span>
+                    <span class="CardTag">Wellness</span>
+                </div>
+                <a href="https://app-serenity.vercel.app/" target="_blank" rel="noopener" class="Boton">Ver App</a>
             </div>
 
-            <div class="ProjectCard">
-                <h2>Be AgentIA</h2>
-                <span class="Badge wp">WordPress (CMS)</span>
-                <p>Sitio web estratégico para soluciones basadas en Inteligencia Artificial. Optimización para conversión.</p>
-                <a href="https://beagentia.com.co/" target="_blank" class="Boton">Visitar Sitio</a>
+            <div class="ProjectCard fade-in delay-3" data-cat="codigo">
+                <div class="CardTop">
+                    <h2>JHG · ESEASA Alliance</h2>
+                    <span class="Badge code">Código</span>
+                </div>
+                <p>Sitio corporativo para alianza Oil & Gas en Latinoamérica. Presencia digital de excelencia para el sector energético regional.</p>
+                <div class="CardTags">
+                    <span class="CardTag">HTML/CSS/JS</span>
+                    <span class="CardTag">Vercel</span>
+                    <span class="CardTag">Oil & Gas</span>
+                </div>
+                <a href="https://jhg-web.vercel.app/" target="_blank" rel="noopener" class="Boton">Ver Sitio</a>
             </div>
 
-            <div class="ProjectCard">
-                <h2>Aula Virtual BPM</h2>
-                <span class="Badge lms">Moodle (LMS)</span>
-                <p>Campus virtual corporativo administrado y personalizado con Moodle. Contenidos E-learning interactivos con IA.</p>
-                <a href="https://moodle.bpmconsulting.com.co/" target="_blank" class="Boton">Ver Plataforma</a>
+            <div class="ProjectCard fade-in delay-1" data-cat="codigo">
+                <div class="CardTop">
+                    <h2>Brochure Be AgentIA</h2>
+                    <span class="Badge code">Código</span>
+                </div>
+                <p>Brochure digital interactivo para la plataforma de IA conversacional Be AgentIA. Experiencia bilingüe (ES/EN) con arquitectura modular y contenido dinámico.</p>
+                <div class="CardTags">
+                    <span class="CardTag">HTML/CSS/JS</span>
+                    <span class="CardTag">Vercel</span>
+                    <span class="CardTag">IA</span>
+                </div>
+                <div class="ButtonGroup">
+                    <a href="https://brochure-be-agent-ia.vercel.app/" target="_blank" rel="noopener" class="Boton">Ver Brochure</a>
+                    <a href="https://brochure-digital.vercel.app/" target="_blank" rel="noopener" class="Boton outline">Ver Hub Digital</a>
+                </div>
+            </div>
+
+            <div class="ProjectCard fade-in delay-2" data-cat="codigo">
+                <div class="CardTop">
+                    <h2>BPM Consulting App</h2>
+                    <span class="Badge code">Código</span>
+                </div>
+                <p>Landing page bilingüe (ES/EN) para BPM Consulting. Experiencia de entrada limpia con selección de idioma, branding corporativo y navegación optimizada.</p>
+                <div class="CardTags">
+                    <span class="CardTag">React</span>
+                    <span class="CardTag">Vercel</span>
+                    <span class="CardTag">Bilingüe</span>
+                </div>
+                <a href="https://app-bpm-eight.vercel.app/" target="_blank" rel="noopener" class="Boton">Ver App</a>
+            </div>
+
+            <div class="ProjectCard fade-in delay-3" data-cat="codigo">
+                <div class="CardTop">
+                    <h2>BPMe Technologies BPO</h2>
+                    <span class="Badge code">Código</span>
+                </div>
+                <p>Landing page de BPMe Technologies para captación de clientes en EE.UU. Presenta servicios BPO nearshore: telemarketing, back office e integración de IA (AGENTIA).</p>
+                <div class="CardTags">
+                    <span class="CardTag">Builder.io</span>
+                    <span class="CardTag">BPO</span>
+                    <span class="CardTag">USA Market</span>
+                </div>
+                <a href="https://bpmetechnologies-com-928671.builder-preview.com/" target="_blank" rel="noopener" class="Boton">Ver Sitio</a>
+            </div>
+
+            <!-- ── WORDPRESS ────────────────────────────── -->
+
+            <div class="ProjectCard fade-in delay-1" data-cat="wordpress">
+                <div class="CardTop">
+                    <h2>HAUV Trading</h2>
+                    <span class="Badge wp">WordPress</span>
+                </div>
+                <p>Plataforma digital para compra, venta y gestión de activos respaldados por oro (WiiGold). Diseño corporativo fintech con verificación KYC/KYB y apps móviles.</p>
+                <div class="CardTags">
+                    <span class="CardTag">WordPress</span>
+                    <span class="CardTag">Fintech</span>
+                    <span class="CardTag">Cripto</span>
+                </div>
+                <div class="ButtonGroup">
+                    <a href="https://hauvtrading.com/" target="_blank" rel="noopener" class="Boton">Ver Sitio</a>
+                    <a href="https://lightgreen-fly-476855.hostingersite.com/" target="_blank" rel="noopener" class="Boton outline">Ver Previa</a>
+                </div>
+            </div>
+
+            <div class="ProjectCard fade-in delay-2" data-cat="wordpress">
+                <div class="CardTop">
+                    <h2>Be AgentIA</h2>
+                    <span class="Badge wp">WordPress</span>
+                </div>
+                <p>Sitio web estratégico para la plataforma de agentes virtuales IA de BPM Consulting. Optimizado para conversión con integración de soluciones conversacionales omnicanal.</p>
+                <div class="CardTags">
+                    <span class="CardTag">WordPress</span>
+                    <span class="CardTag">IA</span>
+                    <span class="CardTag">SEO</span>
+                </div>
+                <a href="https://beagentia.com.co/" target="_blank" rel="noopener" class="Boton">Ver Sitio</a>
+            </div>
+
+            <!-- ── E-LEARNING ───────────────────────────── -->
+
+            <div class="ProjectCard fade-in delay-1" data-cat="elearning">
+                <div class="CardTop">
+                    <h2>Aula Virtual BPM</h2>
+                    <span class="Badge lms">Moodle LMS</span>
+                </div>
+                <p>Campus virtual corporativo administrado y personalizado con Moodle. Contenidos E-learning interactivos apoyados en IA para onboarding y formación continua.</p>
+                <div class="CardTags">
+                    <span class="CardTag">Moodle</span>
+                    <span class="CardTag">E-Learning</span>
+                    <span class="CardTag">IA</span>
+                </div>
+                <a href="https://moodle.bpmconsulting.com.co/" target="_blank" rel="noopener" class="Boton">Ver Plataforma</a>
+            </div>
+
+            <!-- ── GAMIFICACIÓN ──────────────────────────── -->
+
+            <div class="ProjectCard fade-in delay-1" data-cat="gamificacion">
+                <div class="CardTop">
+                    <h2>Comprobante de Pago</h2>
+                    <span class="Badge genially">Gamificación</span>
+                </div>
+                <p>Contenido E-learning gamificado para enseñar a empleados a interpretar su liquidación salarial. Incluye juego interactivo estilo pinball con preguntas sobre EPS, pensión y deducciones.</p>
+                <div class="CardTags">
+                    <span class="CardTag">Genially</span>
+                    <span class="CardTag">Gamificación</span>
+                    <span class="CardTag">Formación</span>
+                </div>
+                <a href="https://view.genially.com/65c642deda22af00143d985c" target="_blank" rel="noopener" class="Boton">Ver Contenido</a>
+            </div>
+
+            <div class="ProjectCard fade-in delay-2" data-cat="gamificacion">
+                <div class="CardTop">
+                    <h2>Mario World BPM</h2>
+                    <span class="Badge genially">Gamificación</span>
+                </div>
+                <p>Juego de tablero interactivo para gamificación en capacitaciones corporativas. Mecánicas tipo Mario con preguntas, retos y penalizaciones personalizables para cualquier proceso formativo.</p>
+                <div class="CardTags">
+                    <span class="CardTag">Genially</span>
+                    <span class="CardTag">Gamificación</span>
+                    <span class="CardTag">Board Game</span>
+                </div>
+                <a href="https://view.genially.com/658310cda8465200140f6293" target="_blank" rel="noopener" class="Boton">Ver Juego</a>
+            </div>
+
+            <div class="ProjectCard fade-in delay-3" data-cat="gamificacion">
+                <div class="CardTop">
+                    <h2>Calendario BPM 2025</h2>
+                    <span class="Badge genially">Gamificación</span>
+                </div>
+                <p>Calendario interactivo de actividades de formación y bienestar 2025 para BPM Consulting. Diseñado en Genially con interfaz visual dinámica y categorías por tipo de evento.</p>
+                <div class="CardTags">
+                    <span class="CardTag">Genially</span>
+                    <span class="CardTag">Diseño</span>
+                    <span class="CardTag">Corporativo</span>
+                </div>
+                <a href="https://view.genially.com/676ece0179aacc626eeb5edc" target="_blank" rel="noopener" class="Boton">Ver Calendario</a>
             </div>
 
         </section>
+
+        <p class="ContadorProyectos fade-in" id="contadorProyectos">Mostrando <strong id="numVisible">12</strong> proyectos</p>
+
     </main>
 
     <footer>
         <p>© 2026 Mateo Alzate. Todos los derechos reservados.</p>
         <div class="social">
-            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/brolkwin-cmd" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/brolkwin-cmd" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
     </footer>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

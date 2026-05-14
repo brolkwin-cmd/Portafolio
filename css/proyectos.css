@@ -1,106 +1,208 @@
-/* Estilos específicos de Proyectos (Neo-Brutalism) */
+/* ── Proyectos page ── */
 
 .MainProyectos {
-    padding-top: 140px;
+    padding-top: 120px;
     padding-bottom: 80px;
     min-height: 100vh;
 }
 
-.MainProyectos .Titulo {
-    text-align: center;
-}
-
+.MainProyectos .Titulo,
 .MainProyectos .Subtitulo {
     text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
+/* ── Filter tabs ── */
+.FiltroBotones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 0 5%;
+    margin: 30px auto 40px;
+    max-width: 1200px;
+}
+
+.FiltroBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    border: 3px solid var(--text-dark);
+    border-radius: 50px;
+    padding: 9px 22px;
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition-bounce);
+    box-shadow: 3px 3px 0px var(--text-dark);
+}
+
+.FiltroBtn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--text-dark);
+    background-color: var(--accent-yellow);
+}
+
+.FiltroBtn.active {
+    background-color: var(--text-dark);
+    color: var(--bg-cream);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--accent-yellow);
+}
+
+.FiltroIcon { font-size: 1.4rem; }
+
+/* ── Grid ── */
 .Structure {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
 }
 
+/* ── Project Card ── */
 .ProjectCard {
     background-color: var(--bg-cream);
     border: var(--border-thick);
     border-radius: var(--radius);
     box-shadow: var(--shadow-hard);
-    padding: 40px 30px;
+    padding: 32px 26px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    gap: 16px;
+    transition: all var(--transition-bounce);
     position: relative;
 }
 
 .ProjectCard:hover {
-    transform: translate(-5px, -5px) rotate(1deg);
+    transform: translate(-5px, -5px);
     box-shadow: var(--shadow-hover);
     background-color: var(--accent-yellow);
 }
 
-.ProjectCard h2 {
-    font-size: 2.8rem;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    text-transform: uppercase;
+.ProjectCard.hidden {
+    display: none;
 }
 
+/* Card header: title + badge side by side */
+.CardTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.ProjectCard h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    line-height: 1.2;
+    flex: 1;
+}
+
+/* ── Badges ── */
 .Badge {
     display: inline-block;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 1.3rem;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 1.2rem;
     font-weight: 900;
-    margin-bottom: 20px;
+    white-space: nowrap;
     text-transform: uppercase;
     border: 3px solid var(--text-dark);
+    box-shadow: 2px 2px 0px var(--text-dark);
+    flex-shrink: 0;
 }
 
-.Badge.code {
-    background-color: #a78bfa;
-    color: var(--text-dark);
-}
+.Badge.code      { background-color: #a78bfa; color: var(--text-dark); }
+.Badge.wp        { background-color: #38bdf8; color: var(--text-dark); }
+.Badge.lms       { background-color: #fb923c; color: var(--text-dark); }
+.Badge.genially  { background-color: #4ade80; color: var(--text-dark); }
 
-.Badge.wp {
-    background-color: #38bdf8;
+/* ── Card body text ── */
+.ProjectCard > p {
+    font-size: 1.55rem;
     color: var(--text-dark);
-}
-
-.Badge.lms {
-    background-color: #fb923c;
-    color: var(--text-dark);
-}
-
-.ProjectCard p {
-    font-size: 1.6rem;
-    color: var(--text-dark);
-    margin-bottom: 30px;
-    flex-grow: 1;
     font-weight: 500;
+    line-height: 1.65;
+    flex-grow: 1;
+    margin: 0;
 }
 
+/* ── Tech tags ── */
+.CardTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    width: 100%;
+}
+
+.CardTag {
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    background-color: transparent;
+    border: 2px solid var(--text-dark);
+    border-radius: 50px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity var(--transition);
+}
+
+.ProjectCard:hover .CardTag {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.08);
+}
+
+/* ── Buttons ── */
 .ProjectCard .Boton {
     width: 100%;
     text-align: center;
-    margin: 5px 0;
+    margin: 0;
     padding: 12px 0;
+    font-size: 1.5rem;
 }
 
 .ButtonGroup {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     width: 100%;
 }
+.ButtonGroup .Boton { flex: 1; }
 
-@media (max-width: 768px) {
-    .Structure {
-        grid-template-columns: 1fr;
-    }
-    .ButtonGroup {
-        flex-direction: column;
-    }
+/* ── Project counter ── */
+.ContadorProyectos {
+    text-align: center;
+    color: var(--bg-cream);
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0.8;
+    margin: 40px auto 0;
+    padding: 0 5%;
+}
+.ContadorProyectos strong {
+    color: var(--accent-yellow);
+    font-weight: 900;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .Structure { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .Structure { grid-template-columns: 1fr; }
+    .ButtonGroup { flex-direction: column; }
+    .ButtonGroup .Boton { flex: unset; }
+    .FiltroBotones { gap: 8px; }
+    .FiltroBtn { font-size: 1.3rem; padding: 7px 16px; }
 }
