@@ -1,47 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO MATEO ALZATE</title>
-    <link rel="stylesheet" href="./../css/styles.css">
-
+    <title>Sobre Mí | Mateo Alzate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .Acerca {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+        .CVContainer {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .CVSidebar {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .CVName {
+            font-size: 3.5rem;
+            color: #fff;
+            font-weight: 800;
+        }
+        .CVRole {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        .CVContact {
+            font-size: 1.4rem;
+            color: #94a3b8;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .CVSectionTitle {
+            font-size: 2.2rem;
+            color: #fff;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        .CVText {
+            font-size: 1.6rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .CVJob {
+            margin-bottom: 30px;
+        }
+        .CVJobTitle {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        .CVJobMeta {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        .CVList {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .CVList li {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .CVList li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+        .CVLogro {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.4rem;
+            color: #e2e8f0;
+        }
+        @media (max-width: 768px) {
+            .CVContainer { padding: 30px 20px; }
+            .CVName { font-size: 2.8rem; }
+        }
+    </style>
 </head>
-
-
-
 <body>
     <header>
         <nav class="menu">
             <div class="logomenu">
-                <a href="/html/index.html">
-                    <img src="./../img/logo.svg" alt="Imagen Logo" class="img">
+                <a href="index.html">
+                    <img src="../img/logo.svg" alt="Imagen Logo" class="img">
                 </a>
             </div>
             <ul class="list">
-                <li class="list_item"> <a href="/html/proyectos.html"> Proyectos</a></li>
-                <li class="list_item"> <a href="/html/sobremi.html">Sobre Mi</a></li>
-                <li class="list_item"> <a href="contact.html">Contacto</a></li>
+                <li class="list_item"><a href="proyectos.html">Proyectos</a></li>
+                <li class="list_item"><a href="sobremi.html" style="color: var(--accent-color);">Sobre Mí</a></li>
+                <li class="list_item"><a href="contact.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="Acerca">
-        <section class="heroCV">
-            <h1 class="Titulo">Acerca de mi</h1>
-            <img class="imgCv" src="/img/CV MATEO ALZATE.png" alt="Cv Mateo">
-        </section>
+        <section class="CVContainer">
+            <div class="CVSidebar">
+                <h1 class="CVName">Daniel Mateo Alzate López</h1>
+                <p class="CVRole">Diseñador Instruccional / Desarrollador Web Full Stack</p>
+                <div class="CVContact">
+                    <span>Bogotá, Colombia</span>
+                    <span>brolkwin@gmail.com</span>
+                </div>
+            </div>
 
+            <div>
+                <h2 class="CVSectionTitle">Perfil Profesional</h2>
+                <p class="CVText">Soy profesional técnico en sistemas, actual estudiante de Ingeniería Multimedia y Desarrollo Web Full Stack. Tengo experiencia liderando estrategias de diseño instruccional, administrando plataformas LMS (Moodle) y creando contenidos E-learning interactivos apoyados en herramientas de Inteligencia Artificial (ChatGPT, Gemini). Mi capacidad pedagógica y de análisis ha sido clave para facilitar la capacitación de equipos operativos y corporativos, logrando traducir requerimientos de las áreas estratégicas en experiencias digitales impactantes que fortalecen el aprendizaje, la calidad del servicio y el posicionamiento de marca.</p>
+
+                <h2 class="CVSectionTitle">Experiencia</h2>
+                
+                <div class="CVJob">
+                    <h3 class="CVJobTitle">Líder de Diseño - Diseño Instruccional</h3>
+                    <p class="CVJobMeta">BPM Consulting SAS | oct 2023 – presente</p>
+                    <ul class="CVList">
+                        <li>Diseñar materiales gráficos, audiovisuales y sitios web alineados con los objetivos de comunicación y la identidad corporativa.</li>
+                        <li>Administrar la plataforma Moodle y crear contenidos educativos multimedia integrando herramientas de Inteligencia Artificial y E-learning.</li>
+                        <li>Capacitar y brindar apoyo pedagógico en procesos de onboarding y formación continua.</li>
+                    </ul>
+                    <div class="CVLogro"><strong>Logro:</strong> Lideré la transformación digital del onboarding corporativo integrando metodologías de gamificación y mejoras de UX en las plataformas de E-learning, logrando incrementar la retención del conocimiento y la participación activa en un 90%.</div>
+                </div>
+
+                <div class="CVJob">
+                    <h3 class="CVJobTitle">SME Trainer</h3>
+                    <p class="CVJobMeta">Webhelp (Concentrix) | oct 2021 – may 2023</p>
+                    <ul class="CVList">
+                        <li>Liderar el equipo y los procesos de formación inicial y continua para colaboradores en campañas de servicio multicanal.</li>
+                        <li>Analizar el comportamiento de los indicadores operativos para determinar y ejecutar planes de acción oportunos.</li>
+                    </ul>
+                    <div class="CVLogro"><strong>Logro:</strong> Ejecuté planes de acción formativos basados en el análisis de indicadores, logrando equipos con el 100% de aprobación en el proceso de capacitación para la campaña asignada.</div>
+                </div>
+
+                <h2 class="CVSectionTitle">Educación</h2>
+                <ul class="CVList">
+                    <li><strong>Desarrollo Web Full Stack</strong> – BIT Institute (En curso)</li>
+                    <li><strong>Ingeniería Multimedia</strong> – UNAD (2024 - En curso)</li>
+                    <li><strong>Técnico en Sistemas</strong> – UPanamericana / SED (2013)</li>
+                </ul>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="contact.html" class="Boton">Contactarme</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 Mateo Alzate. All rights reserved.</p>
+        <p>© 2026 Mateo Alzate. Todos los derechos reservados.</p>
         <div class="social">
-            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank">Linkedin</a>
+            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank">LinkedIn</a>
             <a href="https://github.com/brolkwin-cmd" target="_blank">GitHub</a>
         </div>
     </footer>
 </body>
-
 </html>

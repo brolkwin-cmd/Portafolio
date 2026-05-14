@@ -1,80 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO MATEO ALZATE</title>
-    <link rel="stylesheet" href="./../css/styles.css">
-    <link rel="stylesheet" href="/css/proyectos.css">
-
+    <title>Proyectos | Mateo Alzate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/proyectos.css">
 </head>
-
-
 <body>
     <header>
         <nav class="menu">
             <div class="logomenu">
-                <a href="/html/index.html">
-                    <img src="./../img/logo.svg" alt="Imagen Logo" class="img">
+                <a href="index.html">
+                    <img src="../img/logo.svg" alt="Imagen Logo" class="img">
                 </a>
             </div>
             <ul class="list">
-                <li class="list_item"> <a href="/html/proyectos.html"> Proyectos</a></li>
-                <li class="list_item"> <a href="/html/sobremi.html">Sobre Mi</a></li>
-                <li class="list_item"> <a href="contact.html">Contacto</a></li>
+                <li class="list_item"><a href="proyectos.html" style="color: var(--accent-color);">Proyectos</a></li>
+                <li class="list_item"><a href="sobremi.html">Sobre Mí</a></li>
+                <li class="list_item"><a href="contact.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="MainProyectos">
         <h1 class="Titulo">PORTAFOLIO</h1>
-        <p class="Subtitulo">Proyectos destacados de Desarrollo Web</p>
-
+        <p class="Subtitulo">Proyectos destacados desarrollados a medida y con CMS (WordPress)</p>
 
         <section class="Structure">
-
-            <div class="SectionHtml">
-                <h2>BPME TECH</h2>
-                <p><span>Página Web</span>
-                </p>
-                <a href="https://bpmetechnologies.com/" target="_blank" class="Boton">Visitar Sitio</a>
+            
+            <div class="ProjectCard">
+                <h2>BPMe Technologies</h2>
+                <span class="Badge code">Desarrollo a Medida (Código)</span>
+                <p>Plataforma operativa para programas corporativos y federales de EE.UU. Interfaces limpias, seguras y robustas, construidas mediante desarrollo web a la medida.</p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://bpme.bpmconsulting.com.co/" target="_blank" class="Boton">Ver Principal</a>
+                    <a href="https://bpmetechnologies.com/" target="_blank" class="Boton outline">Ver Previa</a>
+                </div>
             </div>
 
-            <div class="SectionCss">
-                <h2>BE AGENTIA</h2>
-                <p><span>Página Web</span>
-                </p>
+            <div class="ProjectCard">
+                <h2>HAUV Trading / WiiGold</h2>
+                <span class="Badge wp">WordPress (CMS)</span>
+                <p>Plataforma global y ecosistema digital para la gestión segura de activos digitales respaldados por oro. Diseño corporativo y optimizado para SEO desarrollado con WordPress.</p>
+                <a href="https://hauvtrading.com/" target="_blank" class="Boton">Visitar Sitio</a>
+            </div>
+
+            <div class="ProjectCard">
+                <h2>Be AgentIA</h2>
+                <span class="Badge wp">WordPress (CMS)</span>
+                <p>Sitio web estratégico para comercialización de soluciones basadas en Inteligencia Artificial. Integración de animaciones avanzadas y optimización para conversión.</p>
                 <a href="https://beagentia.com.co/" target="_blank" class="Boton">Visitar Sitio</a>
             </div>
 
-            <div class="SectionBoxModel">
-                <h2>AULA VIRTUAL</h2>
-                <p><span>Moodle BPM:</span>
-                </p>
-                <a href="https://moodle.bpmconsulting.com.co/" target="_blank" class="Boton">Ver Moodle</a>
-            </div>
-
-            <div class="SectionDisplay">
-                <h2>Wii Gold</h2>
-                <p><span>Página Web</span>
-                </p>
-                <a href="https://beagentia.com.co/" target="_blank" class="Boton">Visitar Sitio</a>
+            <div class="ProjectCard">
+                <h2>Aula Virtual BPM</h2>
+                <span class="Badge lms">Moodle (LMS)</span>
+                <p>Campus virtual corporativo administrado y personalizado con Moodle. Creación de contenidos E-learning interactivos soportados por herramientas de Inteligencia Artificial.</p>
+                <a href="https://moodle.bpmconsulting.com.co/" target="_blank" class="Boton">Ver Plataforma</a>
             </div>
 
         </section>
     </main>
 
-
-    </main>
-
     <footer>
-        <p>© 2026 Mateo Alzate. All rights reserved.</p>
+        <p>© 2026 Mateo Alzate. Todos los derechos reservados.</p>
         <div class="social">
-            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank">Linkedin</a>
+            <a href="https://www.linkedin.com/in/mateo-alzate-24044431a/" target="_blank">LinkedIn</a>
             <a href="https://github.com/brolkwin-cmd" target="_blank">GitHub</a>
         </div>
     </footer>
 </body>
-
 </html>
